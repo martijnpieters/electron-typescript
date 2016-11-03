@@ -1,5 +1,6 @@
 {
   "name": "electron-typescript",
+  "productionName": "Electron + TypeScript",
   "version": "0.0.1",
   "description": "Electron + Typescript boilerplate",
   "main": "src/electron/main.js",
