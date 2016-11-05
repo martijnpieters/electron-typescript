@@ -9,7 +9,7 @@
   },
   "main": "src/electron/main.js",
   "scripts": {
-    "clean": "find ./src -type f -name *.js | xargs rm && rm -rf ./build",
+    "clean": "find ./src -type f -name *.js | xargs rm && rm -rf ./target",
     "clear": "npm run clean",
     "build": "tsc",
     "package": "npm run clean && npm run build && electron-packager . --out ./target",
