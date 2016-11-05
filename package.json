@@ -1,11 +1,19 @@
 {
   "name": "electron-typescript",
-  "productionName": "Electron + TypeScript",
+  "productName": "Electron + TypeScript",
   "version": "0.0.1",
   "description": "Electron + Typescript boilerplate",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/martijnpieters/electron-typescript.git"
+  },
   "main": "src/electron/main.js",
   "scripts": {
+    "clean": "find ./src -type f -name *.js | xargs rm && rm -rf ./build",
+    "clear": "npm run clean",
     "build": "tsc",
+    "package": "npm run clean && npm run build && electron-packager . --out ./target",
+    "package-all": "npm run clean && npm run build && electron-packager . --all --out ./target",
     "prestart": "npm run build",
     "start": "electron src/electron/main.js"
   },
