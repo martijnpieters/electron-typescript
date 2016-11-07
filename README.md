@@ -3,16 +3,15 @@
 ## Install prerequisites
 
 Install node packages and TypeScript typings:
-```
+```bash
 npm install
-typings install
 ``` 
 
-It is assumed that `typescript` and `typings` are installed globally. Otherwise run `npm install typings typescript -g`
+This command will also install `typescript` and `typings` globally. 
 
 ## Commands
 
-```
+```bash
 # Run app
 npm start
 
