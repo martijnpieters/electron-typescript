@@ -9,12 +9,12 @@
   },
   "main": "src/electron/main.js",
   "scripts": {
-    "clean": "find ./src -type f -name *.js | xargs rm && rm -rf ./target",
-    "clear": "npm run clean",
+    "clean": "del-cli ./src/**/*.js && rimraf ./target",
     "build": "tsc",
-    "package": "npm run clean && npm run build && electron-packager . --out ./target",
-    "package-all": "npm run clean && npm run build && electron-packager . --all --out ./target",
+    "package": "npm run build && electron-packager . --out ./target",
+    "package:all": "npm run build && electron-packager . --all --out ./target",
     "postinstall": "typings install",
+    "prebuild": "npm run clean",
     "preinstall": "npm install typescript typings -g",
     "prestart": "npm run build",
     "start": "electron src/electron/main.js"
@@ -22,7 +22,9 @@
   "author": "Martijn Pieters",
   "license": "MIT",
   "devDependencies": {
+    "del-cli": "^0.2.0",
     "electron-packager": "^8.2.0",
-    "electron-prebuilt": "^1.4.5"
+    "electron-prebuilt": "^1.4.5",
+    "rimraf": "^2.5.4"
   }
 }

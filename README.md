@@ -19,7 +19,7 @@ npm start
 npm run package
 
 # Create executables for all platforms
-npm run package-all
+npm run package:all
 
 # Clear all javascript files and executables
 npm run clean
